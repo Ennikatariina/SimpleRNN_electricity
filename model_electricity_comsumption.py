@@ -12,7 +12,7 @@ from sklearn.preprocessing import MinMaxScaler
 import math
 from sklearn.metrics import mean_squared_error
 from keras.callbacks import EarlyStopping
-
+from keras.optimizers import Adam
 
 def load_data (filename):
     data = pd.read_csv(filename, encoding='ISO-8859-1', delimiter=';', decimal=',')
@@ -32,7 +32,6 @@ def convert_time_column(dataframe, column_name):
     dataframe[column_name] = pd.to_numeric(dataframe[column_name], downcast='integer') // 10**9
     return dataframe
 
-from keras.optimizers import Adam
 
 # def init_model(input_shape,x_train, y_train):
       
